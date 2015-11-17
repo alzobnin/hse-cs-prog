@@ -159,17 +159,15 @@ int main() {
 }
 
 // Заметим, что функция less нам потребовалась только в одном месте - для сортировки.
-// Можно было бы
-//
+// Можно было бы определить её прямо в месте употребления, даже не давая ей имени.
+// Это делается с помощью конструкции лямбда-функции:
 
-
+#include <iostream>
 #include <map>
 #include <string>
-#include <iostream>
-1;4S
 #include <vector>
 
-
+using TPair = std::pair<std::string, int>;
 
 int main() {
     std::map<std::string, int> freqs;
@@ -177,41 +175,26 @@ int main() {
     while (std::cin >> word)
         ++freqs[word];
 
-    for (const auto& pair : freqs)
-    	std::cout << pair.first
-		          << " " << pair.second << "\n";
+    std::vector<TPair> pairs(freqs.begin(), freqs.end());
+
+    std::sort(
+        pairs.begin(),
+        pairs.end(),
+        [](const TPair& a, const TPair& b) { // лямбда-функция - определяем её прямо в месте использования
+            return a.second > b.second;
+        }
+    );
+
+    for (const auto& pair : pairs)
+        std::cout << pair.first << " " << pair.second << "\n";
 }
 
 
-/*
-int main() {
-    std::map<std::string, int> m;
-    m["hello"] = 42;
-    m["good bye"] = 12;
+// Лямбда-функции появились начиная со стандарта C++11.
+// В квадратных скобках могут стоять имена переменных из контекста, которые требуется пробросить в лямбда-функцию,
+// но это выходит за рамки нашей лекции, и сейчас об этом поговорить не успеем.
 
-    /*for (const auto& elem : m) {
-    	std::cout << elem.first
-    			  << " " << elem.second << "\n";
-    }*/
-
-    //std::cout << m["strange"] << "\n";
-
-    /*for (auto iter = m.begin();
-    	 iter != m.end();
-    	 ++iter) {
-    	std::cout << iter->first
-		          << " " << iter->second << "\n";
-    }*/
-
-    /*auto iter = m.find("hello");
-    if (iter == m.end())
-    	std::cout << "Not found\n";
-    else
-    	std::cout << iter->second << "\n";
-}*/
-
-
-
-
-
+// Есть шутка про то, что теперь такая программа является корректной:
+// Разберитесь-ка, что здесь происходит!
+int main() {[](){}();}
 
