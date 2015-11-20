@@ -217,7 +217,7 @@ void strcpy(char * to, const char * from) {
     size_t i = 0;
     do {
         to[i] = from[i];
-    } while (from[i] != '\0');
+    } while (from[i++] != '\0');
 }
 
 // А можно написать и вот такой классический вариант:
