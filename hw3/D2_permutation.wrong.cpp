@@ -38,7 +38,6 @@ public:
             res.elements[i] = elements[p[i]];
         return res;
     }
-
 };
 
 template <int N>
@@ -61,4 +60,4 @@ int main() {
     std::cout << "pi * tau: " << (pi * tau) << "\n";
     std::cout << "tau * pi: " << (tau * pi) << "\n";
 }
-   
+

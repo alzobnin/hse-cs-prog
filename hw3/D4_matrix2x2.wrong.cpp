@@ -1,6 +1,6 @@
-#include <iostream>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
+#include <iostream>
 
 template <typename T>
 class Matrix2x2 {
@@ -36,7 +36,7 @@ public:
         for (size_t i = 0; i != N; ++i)
             for (size_t j = 0; j != N; ++j)
                 for (size_t k = 0; k != N; ++k)
-                    res(i,j) += other(i,k) * other(k,j);
+                    res(i, j) += other(i, k) * other(k, j);
         return res;
     }
     bool operator == (Matrix2x2 other) const {
@@ -62,6 +62,6 @@ int main() {
     std::cout << "det(B): " << Det(B) << "\n";
     std::cout << "det(A*B): " << Det(A*B) << "\n";
     std::cout << "det(B*A): " << Det(B*A) << "\n";
-    std::cout << "A*B == B*A: " << (A*B == B*A) << "\n"; 
+    std::cout << "A*B == B*A: " << (A*B == B*A) << "\n";
 }
-   
+

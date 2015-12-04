@@ -26,7 +26,6 @@ public:
             res += xi * xi;
         return sqrt(res);
     }
-
 };
 
 std::ostream& operator << (std::ostream& o, MathVector& v) {
@@ -39,9 +38,9 @@ std::ostream& operator << (std::ostream& o, MathVector& v) {
 
 template <typename T, int N>
 std::istream& operator >> (std::istream& i, MathVector<T, N>& v) {
-   for (size_t i = 0; i != N; ++i)
-       i >> v[i];
-   return i;
+    for (size_t i = 0; i != N; ++i)
+        i >> v[i];
+    return i;
 }
 
 template <typename T, int N>
@@ -62,4 +61,4 @@ int main() {
     std::cout << "Scalar product: " << (u * v) << "\n";
     std::cout << "Cosinus of angle: " << Cos(u, v) << "\n";
 }
-   
+

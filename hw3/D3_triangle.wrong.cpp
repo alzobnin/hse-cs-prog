@@ -1,6 +1,6 @@
-#include <iostream>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
+#include <iostream>
 
 using std::pow;
 using std::sqrt;
@@ -23,6 +23,7 @@ double Distance(const Point<T>& p1, const Point<T>& p2) {
 class Triangle {
 private:
     Point V[3];
+
 public:
     Triangle(std::initializer_list<Point> point)
     : V(new Point[3])
@@ -55,7 +56,7 @@ public:
         return std::equal(sides1, sides1 + 3, sides2);
     }
     bool operator != (const Triangle& other) const {
-        return !this==other;
+        return !this == other;
     }
 };
 
@@ -68,4 +69,4 @@ int main() {
     std::cout << "Area of T2: " << T1.Area() << "\n";
     std::cout << "T1 == T2: " << (T1 == T2) << "\n";
 }
-   
+
