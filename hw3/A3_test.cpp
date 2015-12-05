@@ -1,6 +1,8 @@
 #include "poly.h"
 #include <vector>
 #include <iostream>
+#include <map>  // used (line 12), but not included; bug?
+#include <array>  // same story --- crashes on the 10th line
 
 int main() {
     constexpr int N = 3;
