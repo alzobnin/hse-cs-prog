@@ -55,7 +55,7 @@ private:
     }
 };
 
-std::ostream& operator << (std::ostream& out, const Minesweeper& ms) {
+std::ostream& operator << (std::ostream& out, Minesweeper ms) {
     for (size_t i = 0; i != ms.Rows(); ++i) {
         for (size_t j = 0; j != ms.Columns(); ++j)
             out << (ms(i, j) == -1 ? '*' : ms(i, j));
