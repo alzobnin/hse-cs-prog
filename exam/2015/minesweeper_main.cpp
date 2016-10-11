@@ -1,4 +1,5 @@
 #include "minesweeper.h"
+#include <iostream>
 
 int main() {
     size_t m, n;
