@@ -47,7 +47,7 @@ public:
     File(const char * name) {
         f = fopen(name, "r");
         if (f == nullptr)
-            throw CannotOpenFileException();
+            throw CannotOpenFileException();  // генерировать исключения в конструкторах - это нормально!
     }
 
     ~File() {
