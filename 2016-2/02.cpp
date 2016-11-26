@@ -158,8 +158,8 @@ int main() {
 
     sort(v.begin(), v.end()); // передаем в функцию sort пару итераторов, ограничивающих полуинтервал обрабатываемого участка
 
-    for (int elem : w) {
-        cout << fixed << elem << " ";
+    for (int elem : v) {
+        cout << elem << " ";
     }
     cout << "\n";
 }
