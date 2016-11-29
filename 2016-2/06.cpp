@@ -193,7 +193,7 @@ v.erase(std::unique(v.begin(), v.end()), v.end());
 
 int main() {
     std::list<int> data = {1, 4, 5, 9, 9, 13, 47};
-    std::cout << std::binary_search(data.begin(), data.end(), 5) ? "Found\n" : "Not found\n";
+    std::cout << (std::binary_search(data.begin(), data.end(), 5) ? "Found\n" : "Not found\n");
 
     // Если binary_search возвращает true/false,
     // то алгоритмы lower_bound и upper_bound возвращают итераторы.
