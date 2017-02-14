@@ -187,8 +187,8 @@ int main() {
     Cat c("Tom", 1);
     Dog d("Buffa", 2, 3);
 
-    std::cout << c->voice() << "\n";  // Печатает "Myau"
-    std::cout << d->voice() << "\n";  // Печатает "Gav!"
+    std::cout << c.voice() << "\n";  // Печатает "Myau"
+    std::cout << d.voice() << "\n";  // Печатает "Gav!"
 
 
     // Но что если мы хотим сделать вектор животных?
