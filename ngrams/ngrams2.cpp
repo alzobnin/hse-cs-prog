@@ -1,31 +1,30 @@
 #include <iostream>
 #include <map>
+#include <array>
 #include <random>
 #include <string>
-#include <vector>
 
 using namespace std;
 
 int main(int argc, char * argv[]) {
     int n = atoi(argv[1]);
 
-    map<string, vector<int>> freqs;
+    map<string, array<int, 256>> freqs;
     char c;
     string context;
     while (cin.get(c)) {
-        if (context.size() == n) {
-            if (freqs.find(context) == freqs.end())
-                freqs[context].resize(256);
+        if (context.size() == n)
             ++freqs[context][static_cast<unsigned char>(c)];
-        }
         context.push_back(c);
         if (context.size() > n)
             context.erase(context.begin());
     }
 
-    context = "Россия";
-    context.resize(n);
+    context = "To be, or not to be";
+    if (context.size() < n)
+        context.resize(n, ' ');
     cout << context;
+    context = context.substr(context.size() - n);
 
     std::random_device rd;
     std::mt19937 gen(rd());
